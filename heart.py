@@ -7,7 +7,6 @@ class HeartPlot:
         #initializes the HeartPlot class
         self.points = points
         self.x, self.y = self._generate_heart_curve()
-
     def _generate_heart_curve(self):
         #generates x and y coordinates that form the heart shape
         #returns a tuple containing x and y coordinates
@@ -16,8 +15,7 @@ class HeartPlot:
         y = 13 * np.cos(t) - 5 * np.cos(2*t) - 2 * np.cos(3*t) - np.cos(4*t)  #heart curve y-coordinates
         return x, y
 
-    def plot(self):
-        #plots the heart shape outline on a graph
+    def plot(self): #plots the heart shape outline on a graph
         fig, ax = plt.subplots(figsize=(6, 6))  #creates a figure and axis with equal size
         ax.plot(self.x, self.y, color='red', linewidth=2, label="Heart Outline")  #plots the heart curve
         ax.axhline(0, color='black', linewidth=0.5)  #draws a horizontal reference line
